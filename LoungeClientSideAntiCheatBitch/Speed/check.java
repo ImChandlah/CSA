@@ -20,9 +20,23 @@
         return result == Result.FAILED;
     }
 
-    public String getMessage() {
+    final double val = attr.getValue() / attr.b();
+        final AttributeModifier mod = attr.a(AttribUtil.ID_SPRINT_BOOST);
+        if (mod == null){
+            return val;
+        } else {
+            return val / AttribUtil.getMultiplier(mod.c(), mod.d());
+        }
+    }
+
+
+
+
+    public String getMessage(){
         return message;
     }
+
+
 
     public Result getResult() {
         return result;
